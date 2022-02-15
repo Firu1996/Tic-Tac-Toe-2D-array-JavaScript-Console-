@@ -66,7 +66,10 @@ while(currentTurn !== 8){
     }else if((currentTurn %2 !== 0) && firstDimension !== null && SecondDimension !== null){
         board[firstDimension][SecondDimension] = 2;
     }
-    checkWinner(board, currentTurn++);
+    const result = checkWinner(board, currentTurn++);
+    if(result == 'X Win' || result == 'Y Win'){
+        break;
+    }
 }
 
 
