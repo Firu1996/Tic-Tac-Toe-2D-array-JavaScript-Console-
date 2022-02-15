@@ -55,7 +55,7 @@ let currentTurn = 0;
 
 console.table(board);
 
-while(currentTurn !== 8){
+while(currentTurn !== 9){
     
     let firstDimension = prompt(`Enter firstDimension `);
     let SecondDimension = prompt(`Enter SecondDimension `);
@@ -66,10 +66,11 @@ while(currentTurn !== 8){
     }else if((currentTurn %2 !== 0) && firstDimension !== null && SecondDimension !== null){
         board[firstDimension][SecondDimension] = 2;
     }
-    const result = checkWinner(board, currentTurn++);
+    const result = checkWinner(board, currentTurn);
     if(result == 'X Win' || result == 'Y Win'){
         break;
     }
+    currentTurn++;
 }
 
 
